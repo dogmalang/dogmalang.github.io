@@ -293,7 +293,8 @@ Ejemplo:
 Otra posibiidad es usar la siguiente sintaxis como especificador de campo:
 
 ```
-{{variable}}
+
+{ {variable} }
 
 #similar a:
 {variable} = variable
@@ -305,9 +306,9 @@ variable = variable.variable
 Ejemplo:
 
 ```
-const resp = await(http.endpoint("/auth/user/&user/state").patch({{{user}}}, {{state}=params, obs="my obs."}))
+const resp = await(http.endpoint("/auth/user/&user/state").patch({ { {user} } }, { {state}=params, obs="my obs." }))
 #similar a:
-const resp = await(http.endpoint("/auth/user/&user/state").patch({{user}=user}, {{state}=params, obs="my obs."}))
+const resp = await(http.endpoint("/auth/user/&user/state").patch({ {user}=user }, { {state}=params, obs="my obs." }))
 ```
 
 Cuando el nombre del campo es el resultado de una expresión, se puede usar la siguiente sintaxis:

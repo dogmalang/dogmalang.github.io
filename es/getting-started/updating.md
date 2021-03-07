@@ -59,7 +59,7 @@ Si lo que necesitamos es actualizar varios campos a partir de los campos de un m
 Ejemplo:
 
 ```
-self:{{state, error, time} .= obj}
+self:{ {state, error, time} .= obj }
 
 #similar a
 self:{state .= obj.state, error .= obj.error, time .= obj.time}
