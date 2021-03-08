@@ -1,3 +1,8 @@
+---
+page:
+  title: Funciones
+---
+
 # Funciones
 
 Una **función** (*function*) representa un objeto de código llamable con o sin argumentos.
