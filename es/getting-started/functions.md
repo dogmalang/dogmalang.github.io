@@ -1,9 +1,3 @@
----
-layout: page
-previous: ./flow-control
-next: ./errors
----
-
 # Funciones
 
 Una **función** (*function*) representa un objeto de código llamable con o sin argumentos.
