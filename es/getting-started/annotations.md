@@ -1,8 +1,3 @@
----
-title: Anotaciones
-description: ""
----
-
 # Anotaciones
 
 Una **anotación** (*annotation*) no es más que un apunte sobre alguna cosa.
