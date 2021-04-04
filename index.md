@@ -5,6 +5,6 @@
 - [Introducción](./es/getting-started/README.md)
 - Getting started (coming soon)
 
-*Engineered in Valencia, Spain, EU by DogmaticLabs.*
+*Product of Spain, made in Valencia by DogmaticLabs.*
 
 *Copyright (c) {{ site.data.pub.years }} DogmaticLabs*

@@ -176,9 +176,9 @@ Los items pueden ser de los siguientes tipos:
 
 - `~/ruta`. Indica un módulo a encontrar a partir del directorio actual de trabajo (referido al proceso, no al módulo actual).
 
-- `alias:ruta`. Indica un alias de módulo indicado en el archivo `dogmac.yaml` del proyecto.
+- `alias://ruta`. Indica un alias de módulo indicado en el archivo `dogmac.yaml` del proyecto.
 
-- `pkg:ruta`. Indica un paquete del que se depende.
+- `dep://ruta`. Indica un paquete del que se depende.
 
 Se recomienda encarecidamente utilizar las sintaxis `nombre` y `../ruta` para hacer referencia a módulos del paquete bajo desarrollo.
 De tal manera que cuando encontremos uno indicado mediante un texto literal, es decir, delimitado por comillas dobles (`""`), sabremos que es una dependencia del paquete.
@@ -190,8 +190,8 @@ He aquí unos ejemplos ilustrativos:
 use "justo.assert"
 
 #importa el paquete fs
-use pkg:fs
-use fsx = pkg:fs-extra
+use dep://fs
+use fsx = dep://fs-extra
 
 #importa el módulo './Task' como 'T'
 use Task as T
@@ -202,7 +202,7 @@ use Task
 
 #importa los módulos 'fs' y 'http'
 use "fs", "http"
-use pkg:fs, pkg:http
+use dep://fs, dep://http
 
 use (
   "fs"
@@ -210,8 +210,8 @@ use (
 )
 
 use(
-  pkg:fs
-  pkg:http
+  dep://fs
+  dep://http
 )
 ```
 
@@ -232,7 +232,7 @@ Ejemplo:
 
 ```
 use (
-  {Catalog as _Catalog} = alias:task
+  {Catalog as _Catalog} = alias://task
 )
 ```
 
@@ -261,7 +261,7 @@ uses:
 ```
 
 Cada vez que indicamos en un `use` un módulo a través de un alias, esto es, mediante la sintaxis `alias:ruta`, el compilador irá a esta propiedad y extraerá el nombre real del módulo.
-P.ej., si tenemos `alias:fs` y el compilador está compilando a **JavaScript**, el nombre real a usar será `@dogmalang/fs`;
+P.ej., si tenemos `alias://fs` y el compilador está compilando a **JavaScript**, el nombre real a usar será `@dogmalang/fs`;
 en cambio, si estamos compilando a **Python**, `dogmalang.fs`.
 
 Cada alias se representa como una propiedad de `imports`, con un valor de tipo objeto el cual indica qué módulo usar atendiendo al lenguaje al que estamos compilando:

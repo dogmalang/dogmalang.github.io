@@ -112,7 +112,7 @@ native    new       next    nil     nop     not
 op        or
 pawait    pcwait    peval   pr      proc    pub       pvt     pwait
 return
-self      struct    super
+self      static    struct    super
 then      throw     true    type
 until     use
 var
