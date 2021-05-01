@@ -217,36 +217,6 @@ fn Tipo.método()
 
 Sólo se puede definir como abstractos métodos públicos y protegidos.
 
-### Métodos estáticos
-
-Cuando se define un método, éste es de instancia.
-Para definir un método como estático o de tipo, hay que indicar la anotación `@static`.
-Ejemplo:
-
-```
-#Create a token.
-@static
-fn Token.from(req, opts:map) -> tok:Token
-  var enc
-
-  #(1) get token text
-  if opts.authorization then
-    if (enc = req.headers.get("Authorization")) and enc like "^Bearer " then
-      enc = enc.replace(RegExp("^Bearer +"), "")
-
-  if not enc and opts.cookie then enc = req.cookies.get(opts.cookie)
-
-  #(2) verify and decode
-  tok = Token(jwt.verify(enc, if opts.alg like "^HS*" then opts.secret else opts.key end, {
-    algorithm = opts.alg
-    issuer = opts.iss
-    audience = opts.aud
-    ignoreExpiration = if "exp" in opts then opts.exp == false end
-  }))
-catch
-  return Token({})
-```
-
 ## Propiedades
 
 Una **propiedad** (*property*) es un campo calculado: cuando se accede, se ejecuta automáticamente su método asociado y se devuelve el valor devuelto por éste.

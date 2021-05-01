@@ -18,8 +18,7 @@ struct Map<T>
   pub proc set(item:<T>) !items[item.name] = item
 
   #Create a new instance.
-  @static
-  pub fn 'from'(opts:(func,map)) -> s:Self
+  pub static fn 'from'(opts:(func,map)) -> s:Self
     #(1) call function if needed
     if opts is func then
       if (opts = opts()) is not map then throw("function must return map/object.")
@@ -87,8 +86,7 @@ export struct Networks
   pub proc set(item:Network) !items[item.name] = item
 
   #Create a new instance.
-  @static
-  pub fn 'from'(opts:(func,map)) -> s:Self
+  pub static fn 'from'(opts:(func,map)) -> s:Self
     #(1) call function if needed
     if opts is func then
       if (opts = opts()) is not map then throw("function must return map/object.")

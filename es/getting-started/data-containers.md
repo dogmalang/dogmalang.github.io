@@ -102,7 +102,7 @@ Las palabras reservadas del lenguaje son:
 ```
 and       as        async   await
 break
-catch     const     copy    cwait
+cast      catch     const     copy    cwait
 defer     do        dogma
 each      else      emit    end     enum    export    extern
 false     finally   fn      for     from

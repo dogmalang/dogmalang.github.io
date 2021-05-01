@@ -228,6 +228,17 @@ El orden de ejecución de los métodos anotados es:
 2. `@post`
 3. `@validate`
 
+## Miembros estáticos
+
+Los miembros estáticos se definen con el modificador `static` a continuación de la visibilidad:
+
+```dogma
+pub static var x = 1
+
+pub static fn método()
+  #...
+```
+
 ## Anotación `@sealed`
 
 Cuando una estructura se anota con `@sealed`, sus instancias no permiten la añadidura de nuevos campos.
@@ -309,12 +320,12 @@ Se pasará a la siguiente.
 Finalmente, el orden de ejecución de las expresiones diferidas es en orden inverso,
 es decir, se utiliza un algoritmo LIFO (último en entrar, primero en salir).
 
-## Operador as
+## Función de conversión `cast()`
 
-Cuando sabemos que un objeto cumple la interfaz de datos de un tipo, podemos asignarle su tipo mediante el operador `as` sin necesidad de crear una nueva instancia:
+Cuando sabemos que un objeto cumple la interfaz de datos de un tipo, podemos asignarle su tipo mediante la función reservada `cast()` sin necesidad de crear una nueva instancia:
 
 ```
-obj as Tipo
+cast<Tipo>(objeto)
 ```
 
 Si el objeto indicado no es de tipo `map`, el operador propagará un error.
@@ -329,6 +340,6 @@ struct Coord2D:
 p = {x = 0, y = 0}
 print(p is Coord2D) #false
 
-p = p as Coord2D
+p = cast<Coord2D>(p)
 print(p is Coord2D) #true
 ```

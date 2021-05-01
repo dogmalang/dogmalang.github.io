@@ -41,7 +41,7 @@ struct Estructura
   #...
 ```
 
-La anotación `@singleton` aplicada a un procedimiento conlleva que éste se definirá como `@static` también.
+La anotación `@singleton` aplicada a un procedimiento conlleva que éste se definirá como estático también.
 Este procedimiento espera dos argumentos:
 
 - `i`, la instancia única.

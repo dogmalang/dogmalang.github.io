@@ -51,9 +51,6 @@ Las anotaciones más comunes son las siguientes:
 #indica que el elemento al que anota sólo debe compilarse cuando se compile a Python
 @py
 
-#indica un método estático
-@static
-
 #indica un tipo, función o método pendiente de hacer. Inyecta automáticamente todo() en el cuerpo
 @todo
 
