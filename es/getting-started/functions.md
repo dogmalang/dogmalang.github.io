@@ -624,3 +624,29 @@ overload(num, num, ...)
 #los demás argumentos no nos interesan
 overload(num, num, ?num, ...)
 ```
+
+## Funciones de funciones
+
+Existe una sintaxis especial para aquellas funciones que devuelven a su vez otra función que a su vez podría devolver otra.
+Lo siguiente en **JavaScript**:
+
+```javascript
+function fun(x) {
+  return function(y) {
+    return function(z) {
+      //...
+    }
+  }
+}
+
+const fun = (x) => (y) => (z) => {
+  //...
+}
+```
+
+Se puede escribir en **Dogma** como sigue:
+
+```dogma
+fn fun(x)(y)(z)
+  #...
+```
