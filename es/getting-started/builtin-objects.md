@@ -72,7 +72,7 @@ echof("Hello %s!", name)
 Mediante la función `exec()`, se puede ejecutar un comando síncrona o asíncronamente:
 
 ```
-fn exec(...cmd, opts?:map) : (text,buffer,subps)
+fn exec(...cmd, opts?:map) : (text | buffer | subps)
 fn exec(...cmd, done:func) : subps
 ```
 
@@ -129,7 +129,7 @@ else
 La función `execf()` es similar a `exec()`, aunque acepta un formato como primer argumento, mientras que el resto se usan para rellenarlo:
 
 ```
-fn execf(fmt:text, ...values, opts?:map) : (text,buffer,subps)
+fn execf(fmt:text, ...values, opts?:map) : (text | buffer | subps)
 fn execf(fmt:text, ...values, done:func) : subps
 ```
 
@@ -198,7 +198,7 @@ fn printf(fmt:text, ...values)
 La función `sleep()` mantiene una espera:
 
 ```
-fn sleep(time:(text,num)) : promise
+fn sleep(time: (text | num)) : promise
 ```
 
 El parámetro `time` tiene la misma sintaxis que el `delay` de la sentencia `with`.

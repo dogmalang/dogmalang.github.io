@@ -55,16 +55,16 @@ De esta manera, no tendremos que añadirlo nosotros mismos.
 ### Parámetros de múltiples tipos
 
 Si se desea, se puede indicar varios tipos para un parámetro.
-En estos casos, delimitarlos entre paréntesis:
+En estos casos, delimitarlos entre paréntesis y separarlos por `|`:
 
 ```
-(Nombre, Nombre, Nombre...)
+(Nombre | Nombre | Nombre...)
 ```
 
 Ejemplo:
 
 ```
-fn suma(x: (text,num), y: (text,num)) = num(x) + num(y)
+fn suma(x: (text | num), y: (text | num)) = num(x) + num(y)
 ```
 
 Además de indicarse varios tipos, también es posible indicar que uno de ellos será el final.
@@ -72,7 +72,7 @@ Para ello, todos los demás se pasarán a uno de ellos.
 En estos casos, la sintaxis es como sigue:
 
 ```
-Tipo(OtroTipo1, OtroTipo2)
+Tipo(OtroTipo1 | OtroTipo2)
 ```
 
 P.ej., es posible convertir el valor de un parámetro a uno de tipo lista, de manera implícita como sigue:
@@ -84,7 +84,7 @@ fn sum(values: list(num))
   return res
 ```
 
-Lo anterior es lo mismo que definir el parámetro `values` como `values: (list,num)` y, además, añadir en el cuerpo de la función la expresión `if values is not list then values = list(values)`.
+Lo anterior es lo mismo que definir el parámetro `values` como `values: (list | num)` y, además, añadir en el cuerpo de la función la expresión `if values is not list then values = list(values)`.
 De esta manera, esta expresión no hay que añadirla explícitamente.
 
 ### Parámetros de tipo lista
@@ -558,7 +558,7 @@ fn sum(x: num, y: num): num
 /**
  * Suma dos números pasados como texto o número.
  */
-fn sum(x: (text,num), y: (text, num)) -> num
+fn sum(x: (text | num), y: (text | num)) -> num
   return num(x) + num(y)
 ```
 
