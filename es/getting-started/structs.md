@@ -75,6 +75,18 @@ Visib const nombre?:tipo          #Opcional, iniciado a nil si ningún valor esp
 
 Donde la visibilidad se indica mediante las palabras reservadas `pub` (público), `intl` (interno) y `pvt` (privado).
 
+### Anotación `@abstract`
+
+Cuando un campo o atributo se define como `@abstract`, se está indicando que una subestructura debe definirlo:
+
+```
+@abstract
+pub const constante
+
+@abstract
+pub var variable
+```
+
 ### Visibilidad `pub` con la anotación `@hidden`
 
 Cada visibilidad tiene su propio espacio de nombres.

@@ -109,7 +109,7 @@ false     finally   fn      for     from
 if        impl      in      intf    intl    is
 like
 native    new       next    nil     nop     not
-op        or
+or
 pawait    pcwait    peval   pr      proc    pub       pvt     pwait
 return
 self      static    struct    super

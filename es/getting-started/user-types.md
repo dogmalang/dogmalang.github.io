@@ -220,19 +220,27 @@ Sólo se puede definir como abstractos métodos públicos y protegidos.
 ## Propiedades
 
 Una **propiedad** (*property*) es un campo calculado: cuando se accede, se ejecuta automáticamente su método asociado y se devuelve el valor devuelto por éste.
-Para definir una propiedad, hay que utilizar la anotación `@prop`:
+Para definir una propiedad, hay que utilizar la anotación `@prop` o bien una función sin parámetros:
 
 ```
+#mediante anotación
 @prop
 fn Tipo.prop()
   #...
+
+#mediante función sin parámetros
+fn Tipo.prop
+  #...
 ```
 
-Para definir una propiedad abstracta, se utiliza la anotación `@abstract` junto con `@prop`:
+Para definir una propiedad abstracta, se utiliza la anotación `@abstract`:
 
 ```
 @abstract @prop
 fn Tipo.prop()
+
+@abstract
+fn Tipo.prop
 ```
 
 Generalmente, las propiedades acceden a campos protegidos o privados.
